@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+        <title>Сервис API для образовательных платформ с использованием технологии компьютерного зрения</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a href="{% url 'api:index' %}">
+                    <img src="{% static 'img/logo.png' %}" width="136px">
+                </a>
+                <div class="header_right">
+                    <a href="{% url 'api:index' %}">Главная</a>
+                    <a href="{% url 'api:service' %}">Cервис</a>
+                    <a href="{% url 'api:documentation' %}">Документация</a>
+                    <a href="{% url 'api:contacts' %}">Контакты</a>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock content %}
+        <br><br><br>
+        <footer>
+            <div class="container">
+                <p>&copy; 2020 Сервис API для образовательных платформ с использованием технологии компьютерного зрения</p>
+            </div>
+        </footer>
+    </body>
+</html>
