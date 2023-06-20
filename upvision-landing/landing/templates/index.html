@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Сервис API для образовательных платформ</h1>
+                <p>С помощью нашего сервиса вы сможете интегрировать технологию <span class="word-blue">компьютерного зрения</span>
+                    в вашу образовательную платформу и <span class="word-blue">улучшить</span> процесс обучения ваших учеников. </p>  
+                <a href="#" class="btn btn-try">Попробовать бесплатно</a> 
+            </div>
+        </section>
+       
+        <section class="features">
+            <h2>Преимущества использования нашего сервиса</h2>
+            <ul>
+                <li>
+                    <h3>Повышение эффективности обучения</h3>
+                        <p>Система компьютерного зрения помогает отслеживать работу учеников и предлагать индивидуальные задания, подходящие именно для них.</p>
+                </li>
+                <li>
+                    <h3>Удобное и простое API</h3>
+                        <p>Наши разработчики создали API, который легко интегрировать в любую образовательную платформу, без особых знаний программирования.</p>
+                </li>
+                <li>
+                    <h3>Безопасность и конфиденциальность данных</h3>
+                        <p>Мы гарантируем безопасность и конфиденциальность данных учеников, которые передаются через наш сервис.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="team">
+            <h2>Наша Команда </h2>
+            <ul>
+                <li>
+                    <figure>
+                        <img src="{% static 'img/photo1.jpeg' %}"  alt="">
+                        <figcaption><h3>Имя</h3></figcaption>
+                    </figure>
+                    <p>
+                        LinkedIn
+                    </p>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="{% static 'img/photo2.jpg' %}" alt="">
+                        <figcaption><h3>Имя</h3></figcaption>
+                    </figure>
+                    <p>
+                        LinkedIn
+                    </p> 
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="{% static 'img/photo3.jpg' %}" alt="">
+                        <figcaption><h3>Имя</h3></figcaption>
+                    </figure>
+                    <p>
+                        LinkedIn
+                    </p>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="{% static 'img/photo4.jpg' %}" alt="">
+                        <figcaption><h3>Имя</h3></figcaption>
+                    </figure>
+                    <p>
+                        LinkedIn
+                    </p>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="{% static 'img/photo5.jpg' %}" alt="">
+                        <figcaption><h3>Имя</h3></figcaption>
+                    </figure>
+                    <p>
+                        LinkedIn
+                    </p>
+                </li>
+            </ul>
+        </section>  
+
+         <!--Contact form-->
+        <div class"contact">    
+            <div class="container">
+                <h2>Контакты</h2>
+                <h4>Напишите нам, если у вас есть вопросы</h4>
+                    <p>
+                     Пожалуйста, напишите свое имя, адрес электронной почты, номер телефона и сообщение.
+                    </p>
+                 <form class="contact__form" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                 <button class="btn" type="submit">Отправить</button>
+                 </form>
+                
+            </div>
+        </div>
+        
+        <section id="cta">
+            <div class="container">
+                <h2>Начните использовать наш сервис уже сегодня!</h2>
+                <a href="#" class="btn">Попробовать бесплатно</a>
+            </div>
+        </section>
+    </main>
+    {% endblock content %}

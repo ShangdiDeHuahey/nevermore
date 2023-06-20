@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Сервис API для образовательных платформ с использованием технологии компьютерного зрения</title>
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+        <meta name="viewport" content="width=device-width">
+<!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <!-- Шапка страницы -->
+            <header class="header">
+                <div class="container">
+                    <div class="header__body">
+                        <a class="header__logo" href="{% url 'landing:index' %}">
+                            <img src="{% static 'img/logo.png' %}" width="136px">
+                        </a>
+                        <div class="header__burger"></div>
+                        
+                        <nav class="header__menu">
+                           <ul class="header__list">
+                                <li><a class="header__link" href="{% url 'landing:index' %}">Главная</a></li>
+                                <li><a class="header__link" href="#service">Cервис</a></li>
+                                <li><a class="header__link" href="#documentation">Документация</a></li>
+                                <li><a class="header__link" href="#contacts">Контакты</a></li>
+                                <li><img src="static/img/icons/sun.png" id="icon" alt="sun/moon"></li>
+                        <!-- Доделать href выше -->
+                           </ul>
+                        </nav>
+                        
+                    </div>
+                </div>
+            </header>
+
+            {% block content %}
+            {% endblock content %}
+            <!-- Подвал страницы -->
+            <footer>
+                <div class="container">
+                    <p>&copy; 2020 Сервис API для образовательных платформ с использованием технологии компьютерного зрения. Все права защищены</p>
+                </div>
+            </footer>
+
+        </div>
+        <script src="static/js/script.js"></script>
+        <script src="static/js/theme.js"></script>
+    </body>
+</html>
+
