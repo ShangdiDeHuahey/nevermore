@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section id="hero">
+        <div class="container">
+            <h1>Документация</h1>
+            <p>
+                Данная API-инструкция описывает доступные методы API, использующие технологию компьютерного зрения для распознавания лиц, выражений на лицах, направлений взгляда и уровня активности студентов для определения заинтересованности.
+            </p>
+            <a href="#" class="btn">Подробнее</a>
+        </div>
+    </section>
+    <section id="features">
+        <div class="container">
+            <h2>Доступные методы API</h2>
+            <ul>
+                <li>
+                    <h3>detectFace(image)</h3>
+                    <p>Обнаруживает лица на изображении.</p>
+                    <br>
+                    <br>
+                    <h3>Пример использования:</h3>
+                    <code>
+                        POST /api/detectFace
+                        <br>
+                        Content-Type: image/jpeg
+                        <br>
+                        <br>
+                    <binary image data></code>
+                    <br>
+                    <br>
+                    <h3>Выходные данные:</h3>
+                    <pre><code>Status: 200 OK
+Content-Type: application/json
+            {
+  "faces": [
+    {
+      "id": 1,
+      "boundingBox": {
+        "x": 100,
+        "y": 200,
+        "width": 150,
+        "height": 150
+      }
+    },
+    {
+      "id": 2,
+      "boundingBox": {
+        "x": 300,
+        "y": 150,
+        "width": 120,
+        "height": 120
+      }
+    }
+  ]
+}</code></pre>
+                </li>
+                <li>
+                    <h3>detectExpression(faceImage)</h3>
+                    <p>Распознает выражение на лице.</p>
+                    <br>
+                    <br>
+                    <h3>Пример использования:</h3>
+                    <code>
+                        POST /api/detectExpression
+                        <br>
+                        Content-Type: image/jpeg
+                        <br>
+                        <br>
+                    <binary face image data></code>
+                    <br>
+                    <br>
+                    <h3>Выходные данные:</h3>
+                    <pre><code>Status: 200 OK
+Content-Type: application/json
+{
+  "expression": "Улыбка"
+}</code></pre></code></pre>
+                </li>
+                <li>
+                    <h3>detectGazeDirection(faceImage)</h3>
+                    <p>Определяет направление взгляда человека.</p>
+                    <br>
+                    <br>
+                    <h3>Пример использования:</h3>
+                    <code>
+                        POST /api/detectGazeDirection
+                        <br>
+                        Content-Type: image/jpeg
+                        <br>
+                        <br>
+                    <binary face image data></code>
+                    <br>
+                    <br>
+                    <h3>Выходные данные:</h3>
+                    <pre><code>Status: 200 OK
+Content-Type: application/json
+
+{
+  "gazeDirection": "Прямо"
+}
+</code></pre>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section id="cta">
+        <div class="container">
+            <h2>Начните использовать API сейчас!</h2>
+            <a href="#" class="btn">Начать</a>
+        </section>
+    </section>
+</div>
+{% endblock content %}
